@@ -51,13 +51,16 @@ Correct Answer: ${correctAnswers[4]}\n`);
 
 
 
+ let grade = [];
+ for (i =0; i<5; i++)
+ if (candidateAnswer[i] === correctAnswers[i]) {
+   grade = (candidateAnswer);
+   grade = grade/5*100;
+   console.log(grade);
+ }
  
-  if (candidateAnswers[i] === correctAnswers[i]){ 
-  let grade = candidateAnswers[i]
-  let overallGrade = grade/5*100
-  console.log(overallGrade + "%");
 
-  }
+  
 
 
   return grade;
