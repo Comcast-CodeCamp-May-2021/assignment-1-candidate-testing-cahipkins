@@ -9,7 +9,7 @@ let question = " ";
 let correctAnswer ;
 let candidateAnswer = [];//wrong candidate answers;
 let candidateAnswers = [];//right candidate answers;
-let questions = ["What was the first American woman in space? ", "True or False. 5000 meters == 5 kilometers? ", "(5+3)/2*10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45] what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let questions = ["What was the first American woman in space? ", "True or False. 5000 meters == 5 kilometers? ", "(5+3)/2*10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45] what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 
 
@@ -33,40 +33,59 @@ function gradeQuiz(candidateAnswers) {
   
 console.log(`Candidate Name: ${candidateName} 
 
-1. ${questions[0]}
+1) ${questions[0]}
 Your Answer: ${candidateAnswer[0]} 
 Correct Answer: ${correctAnswers[0]}\n
-2. ${questions[1]}
+2) ${questions[1]}
 Your Answer: ${candidateAnswer[1]} 
 Correct Answer: ${correctAnswers[1]}\n
-3. ${questions[2]}: ${candidateAnswer[2]}
+3) ${questions[2]} 
 Your Answer: ${candidateAnswer[2]}
 Correct Answer: ${correctAnswers[2]}\n
-4. ${questions[3]}
+4) ${questions[3]}
 Your Answer: ${candidateAnswer[3]}
 Correct Answer: ${correctAnswers[3]}\n
-5. ${questions[4]}
+5) ${questions[4]}
 Your Answer: ${candidateAnswer[4]}
-Correct Answer: ${correctAnswers[4]}\n`);
+Correct Answer: ${correctAnswers[4]}\n `);
 
 
 
- let grade = [];
- for (i =0; i<5; i++)
- if (candidateAnswer[i] === correctAnswers[i]) {
-   grade = (candidateAnswer);
-   grade = grade/5*100;
-   console.log(grade);
- }
+
+
  
 
-  
+ let numberOfCorrectAnswers = 0;
+ let status ;
 
+
+for ( i= 0; i < correctAnswers.length; i++) { 
+if (candidateAnswer[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+  numberOfCorrectAnswers +=1;
+
+
+
+}
+}
+
+let grade = (numberOfCorrectAnswers/5)*100;
+
+if (numberOfCorrectAnswers>=4){
+  status = "PASSED" 
+}else{
+  status = "FAIL"
+}
+
+
+ 
+  
+  
+console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} out of 5 responses correct) <<<
+>>> Status: ${status} <<<<< `);
 
   return grade;
 
 }
-
 
 
 function runProgram() {
