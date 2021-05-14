@@ -28,7 +28,7 @@ function askQuestion() {
     
   }
 
-function gradeQuiz(candidateAnswers) {
+function gradeQuiz(candidateAnswer) {
   // TODO 1.2c: use temperate literal that displays each of the candidate's responses in addition to the corresponding correct answers.
   
 console.log(`Candidate Name: ${candidateName} 
