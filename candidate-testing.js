@@ -7,7 +7,7 @@ let candidateName = " ";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
-let candidateAnswer = [];//wrong candidate answers;
+let candidateAnswer = " ";//wrong candidate answers;
 let candidateAnswers = [];//right candidate answers;
 let questions = ["Who was the first American woman in space? ", "True or False. 5 kilometer == 5000 meters? ", "(5+3)/2*10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45] what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
@@ -22,31 +22,31 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (i = 0; i < questions.length; i++) {
-  candidateAnswer[i] = input.question(questions[i]);
+  candidateAnswers[i] = input.question(questions[i]);
   }
    
     
   }
 
-function gradeQuiz(candidateAnswer) {
+function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: use temperate literal that displays each of the candidate's responses in addition to the corresponding correct answers.
   
 console.log(`Candidate Name: ${candidateName} 
 
 1) ${questions[0]}
-Your Answer: ${candidateAnswer[0]} 
+Your Answer: ${candidateAnswers[0]} 
 Correct Answer: ${correctAnswers[0]}\n
 2) ${questions[1]}
-Your Answer: ${candidateAnswer[1]} 
+Your Answer: ${candidateAnswers[1]} 
 Correct Answer: ${correctAnswers[1]}\n
 3) ${questions[2]} 
-Your Answer: ${candidateAnswer[2]}
+Your Answer: ${candidateAnswers[2]}
 Correct Answer: ${correctAnswers[2]}\n
 4) ${questions[3]}
-Your Answer: ${candidateAnswer[3]}
+Your Answer: ${candidateAnswers[3]}
 Correct Answer: ${correctAnswers[3]}\n
 5) ${questions[4]}
-Your Answer: ${candidateAnswer[4]}
+Your Answer: ${candidateAnswers[4]}
 Correct Answer: ${correctAnswers[4]}\n `);
 
 
@@ -60,7 +60,7 @@ Correct Answer: ${correctAnswers[4]}\n `);
 
 
 for ( i= 0; i < correctAnswers.length; i++) { 
-if (candidateAnswer[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
   numberOfCorrectAnswers +=1;
 
 
